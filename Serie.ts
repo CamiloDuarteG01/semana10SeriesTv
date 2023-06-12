@@ -22,7 +22,8 @@ export class Serie {
     this.episodios = [];
     this.plataformas = [];
   }
-
+  
+  
   get Nombre(): string {
     return this.nombre;
   }
@@ -43,7 +44,7 @@ export class Serie {
     return this.listActores;
   }
 
-  agregarActor(actor: Actor): void {
+  set agregarActor(actor: Actor) {
     this.listActores.push(actor);
   }
 
@@ -51,7 +52,7 @@ export class Serie {
     return this.listDirectores;
   }
 
-  agregarDirector(director: Director): void {
+  set agregarDirector(director: Director) {
     this.listDirectores.push(director);
   }
 
@@ -59,7 +60,7 @@ export class Serie {
     return this.conjuntoCategorias;
   }
 
-  agregarCategoria(categoria: Categoria): void {
+   set agregarCategoria(categoria: Categoria){
     this.conjuntoCategorias.push(categoria);
   }
 
@@ -67,16 +68,16 @@ export class Serie {
     return this.episodios;
   }
 
-  agregarEpisodio(nombre: string, resumen: string, duracion: number): void {
-    const episodio = new Episodio(nombre, resumen, duracion);
-    this.episodios.push(episodio);
+  set Episodio(ep: Episodio){
+  
+    this.episodios.push(ep);
   }
 
   get Plataformas(): Plataforma[] {
     return this.plataformas;
   }
 
-  agregarPlataforma(plataforma: Plataforma): void {
+  set agregarPlataforma(plataforma: Plataforma) {
     this.plataformas.push(plataforma);
   }
 }

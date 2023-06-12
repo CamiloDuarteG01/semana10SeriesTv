@@ -1,13 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Episodio = void 0;
-class Episodio {
-    constructor(nombre = '', resumen = '', duracion = 0) {
+export class Episodio {
+    constructor(nombre = '', resumen = '', duracion = '', nombreSerie) {
         this.nombre = nombre;
         this.resumen = resumen;
         this.duracion = duracion;
-        this.serie = [];
+        this.serie = nombreSerie;
     }
+    //falta verificar si la serie existe
     get Nombre() {
         return this.nombre;
     }
@@ -29,9 +27,8 @@ class Episodio {
     get Serie() {
         return this.serie;
     }
-    agregarSerie(serie) {
-        this.serie.push(serie);
+    set Serie(valor) {
+        this.serie = valor;
     }
 }
-exports.Episodio = Episodio;
 //# sourceMappingURL=Episodio.js.map

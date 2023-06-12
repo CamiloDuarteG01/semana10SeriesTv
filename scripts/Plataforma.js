@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Plataforma = void 0;
-const Plan_js_1 = require("./Plan.js");
-class Plataforma {
+import { Plan } from "./Plan.js";
+export class Plataforma {
     constructor(nombre, sitio_web) {
         this.nombre = nombre;
         this.sitio_web = sitio_web;
@@ -22,9 +19,8 @@ class Plataforma {
         this.sitio_web = nuevoSitio_web;
     }
     agregarPlan(precio) {
-        const plan = new Plan_js_1.Plan(precio);
+        const plan = new Plan(precio);
         this.planes.push(plan);
     }
 }
-exports.Plataforma = Plataforma;
 //# sourceMappingURL=Plataforma.js.map

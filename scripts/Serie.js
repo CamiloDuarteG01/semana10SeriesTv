@@ -1,8 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Serie = void 0;
-const Episodio_js_1 = require("./Episodio.js");
-class Serie {
+export class Serie {
     constructor(nombre = '', imagen = '') {
         this.nombre = nombre;
         this.imagen = imagen;
@@ -27,34 +23,32 @@ class Serie {
     get ListActores() {
         return this.listActores;
     }
-    agregarActor(actor) {
+    set agregarActor(actor) {
         this.listActores.push(actor);
     }
     get ListDirectores() {
         return this.listDirectores;
     }
-    agregarDirector(director) {
+    set agregarDirector(director) {
         this.listDirectores.push(director);
     }
     get ConjuntoCategorias() {
         return this.conjuntoCategorias;
     }
-    agregarCategoria(categoria) {
+    set agregarCategoria(categoria) {
         this.conjuntoCategorias.push(categoria);
     }
     get Episodios() {
         return this.episodios;
     }
-    agregarEpisodio(nombre, resumen, duracion) {
-        const episodio = new Episodio_js_1.Episodio(nombre, resumen, duracion);
-        this.episodios.push(episodio);
+    set Episodio(ep) {
+        this.episodios.push(ep);
     }
     get Plataformas() {
         return this.plataformas;
     }
-    agregarPlataforma(plataforma) {
+    set agregarPlataforma(plataforma) {
         this.plataformas.push(plataforma);
     }
 }
-exports.Serie = Serie;
 //# sourceMappingURL=Serie.js.map

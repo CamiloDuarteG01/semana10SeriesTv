@@ -2,17 +2,19 @@ export class Persona {
     private nombre: string;
     private foto: string;
     private descripcion: string;
+   
   
 
   
     constructor(
       nombre: string = '',
       foto: string = '',
-      descripcion: string = ''
+      descripcion: string = ''  
     ) {
       this.nombre = nombre;
       this.foto = foto;
       this.descripcion = descripcion;
+      
     }
    
     // Sobreescritura del constructor
@@ -22,20 +24,22 @@ export class Persona {
       return this.nombre;
     }
     get Foto(): string {
-      return this.Foto;
+      return this.foto;
     }
     get Descripcion(): string {
-      return this.Descripcion;
+      return this.descripcion;
     }
+   
     
     set Nombre(e: string) {
       this.nombre = e;
     }
     set Foto(e: string) {
-      this.Foto = e;
+      this.foto= e;
     }
     set Descripcion(e: string) {
-      this.Descripcion = e;
+      this.descripcion = e;
     }
-  
+
+
   }

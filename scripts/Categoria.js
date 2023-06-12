@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Categoria = void 0;
-class Categoria {
+export class Categoria {
     constructor(nombre = '') {
         this.nombre = nombre;
         this.series = [];
@@ -15,9 +12,8 @@ class Categoria {
     get Series() {
         return this.series;
     }
-    agregarSerie(serie) {
+    set agregarSerie(serie) {
         this.series.push(serie);
     }
 }
-exports.Categoria = Categoria;
 //# sourceMappingURL=Categoria.js.map

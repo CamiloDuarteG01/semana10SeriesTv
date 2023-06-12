@@ -1,4 +1,4 @@
-import { Serie } from "./Serie";
+import { Serie } from "./Serie.js";
 
 export class Categoria {
   private nombre: string;
@@ -21,7 +21,7 @@ export class Categoria {
     return this.series;
   }
 
-  agregarSerie(serie: Serie): void {
+  set agregarSerie(serie: Serie){
     this.series.push(serie);
   }
 }

@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Persona = void 0;
-class Persona {
+export class Persona {
     constructor(nombre = '', foto = '', descripcion = '') {
         this.nombre = nombre;
         this.foto = foto;
@@ -12,20 +9,19 @@ class Persona {
         return this.nombre;
     }
     get Foto() {
-        return this.Foto;
+        return this.foto;
     }
     get Descripcion() {
-        return this.Descripcion;
+        return this.descripcion;
     }
     set Nombre(e) {
         this.nombre = e;
     }
     set Foto(e) {
-        this.Foto = e;
+        this.foto = e;
     }
     set Descripcion(e) {
-        this.Descripcion = e;
+        this.descripcion = e;
     }
 }
-exports.Persona = Persona;
 //# sourceMappingURL=Persona.js.map

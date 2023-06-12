@@ -1,22 +1,23 @@
-import { Serie } from "./Serie.js";
+
 
 export class Episodio {
   private nombre: string;
   private resumen: string;
-  private duracion: number;
-  private serie: Serie[];
+  private duracion: string;
+  private serie: string | undefined;
 
   constructor(
     nombre: string = '',
     resumen: string = '',
-    duracion: number = 0
+    duracion: string = '',
+    nombreSerie ?:string 
   ) {
     this.nombre = nombre;
     this.resumen = resumen;
     this.duracion = duracion;
-    this.serie = [];
+    this.serie=nombreSerie;
   }
-
+//falta verificar si la serie existe
   get Nombre(): string {
     return this.nombre;
   }
@@ -33,19 +34,20 @@ export class Episodio {
     this.resumen = valor;
   }
 
-  get Duracion(): number {
+  get Duracion(): string {
     return this.duracion;
   }
 
-  set Duracion(valor: number) {
+  set Duracion(valor: string) {
     this.duracion = valor;
   }
-
-  get Serie(): Serie[] {
+  get Serie(): string | undefined{
     return this.serie;
   }
 
-  agregarSerie(serie: Serie): void {
-    this.serie.push(serie);
+  set Serie(valor: string | undefined) {
+    this.serie = valor;
   }
+
+
 }
