@@ -1,4 +1,3 @@
-import { Plan } from "./Plan.js";
 export class Plataforma {
     constructor(nombre, sitio_web) {
         this.nombre = nombre;
@@ -18,9 +17,17 @@ export class Plataforma {
     set Sitio_web(nuevoSitio_web) {
         this.sitio_web = nuevoSitio_web;
     }
-    agregarPlan(precio) {
-        const plan = new Plan(precio);
-        this.planes.push(plan);
+    agregarPlan(...plan) {
+        this.planes.push(...plan);
+    }
+    agregarSerie(...series) {
+        this.series.push(...series);
+    }
+    get Planes() {
+        return this.planes;
+    }
+    get Series() {
+        return this.series;
     }
 }
 //# sourceMappingURL=Plataforma.js.map

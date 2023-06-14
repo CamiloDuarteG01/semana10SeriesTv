@@ -3,8 +3,11 @@ import { Serie } from "./Serie.js";
 import { Categoria } from "./Categoria.js";
 import { Director } from "./Director.js";
 import { Actor } from "./Actor.js";
+import { Plataforma } from "./Plataforma.js";
+import { Plan } from "./Plan.js";
 // Creando lista de series
 let listaSeries = [];
+let listPlata = [];
 const epA = new Episodio('Episodio 1', 'Inicio de la serie A1', '1:20', 'SerieA1');
 const epA1 = new Episodio('Episodio 2', 'Inicio de la serie A2', '1:20', 'SerieA2');
 const epA2 = new Episodio('Episodio 3', 'Inicio de la serie A3', '1:20', 'SerieA3');
@@ -88,4 +91,31 @@ console.log(`Actores de la serie: ${serie1.ListActores.map(actor => actor.Nombre
 console.log(`La serie ${serie2.Nombre} `);
 console.log(`Directores de la serie: ${serie2.ListDirectores.map(director => director.Nombre).join(", ")}`);
 console.log(`Actores de la serie: ${serie2.ListActores.map(actor => actor.Nombre).join(", ")}`);
+//5.mostrar el detalle de un director y de un actor
+//agregar las series a los actores
+actor1.series.push(serie1);
+actor2.series.push(serie1, serie2);
+director1.agregarSerie(serie1);
+director2.agregarSerie(serie2);
+console.log(`El actor ${actor1.Nombre} participo en la serie: ${actor1.series.map(s => s.Nombre).join(", ")}`);
+console.log(`El actor ${actor2.Nombre} participo en la serie: ${actor2.series.map(s => s.Nombre).join(", ")}`);
+console.log(`El Director ${director1.Nombre} dirigio la serie: ${director1.series.map(s => s.Nombre).join(", ")}`);
+//6.Mostrar el listado de las plataformas
+let plataforma1 = new Plataforma("Plataforma 1", "www.plataforma1.com");
+let plataforma2 = new Plataforma("Plataforma 2", "www.plataforma2.com");
+let plataforma3 = new Plataforma("Plataforma 3", "www.plataforma3.com");
+function agregarPlata(...plataforma) {
+    listPlata.push(...plataforma);
+}
+agregarPlata(plataforma1, plataforma2, plataforma3);
+plataforma1.agregarSerie(serie5, serie1, serie4, serie3);
+plataforma2.agregarSerie(serie2);
+plataforma3.agregarSerie(serie1);
+console.log(listPlata.map((e) => e.Nombre));
+plan1: Plan;
+plataforma1.agregarPlan(new Plan(10000), new Plan(20000), new Plan(30000));
+plataforma2.agregarPlan(new Plan(5000), new Plan(7000), new Plan(30000));
+plataforma3.agregarPlan(new Plan(1000), new Plan(2000), new Plan(3000));
+//7.Mostrar detalle de una plataforma
+console.log(plataforma1);
 //# sourceMappingURL=index.js.map

@@ -6,12 +6,14 @@ export class Plataforma {
   private sitio_web: string;
   private planes: Plan[];
   private series: Serie[];
+ 
 
   constructor(nombre: string, sitio_web: string) {
     this.nombre = nombre;
     this.sitio_web = sitio_web;
     this.planes = [];
     this.series = [];
+ 
   }
 
   get Nombre(): string {
@@ -30,9 +32,22 @@ export class Plataforma {
     this.sitio_web = nuevoSitio_web;
   }
 
-  agregarPlan(precio: number): void {
-    const plan = new Plan(precio);
-    this.planes.push(plan);
+  agregarPlan(...plan: Plan[]): void {
+    this.planes.push(...plan);
+  }
+
+  agregarSerie(...series: Serie[]): void {
+    this.series.push(...series);
+  }
+ 
+
+  get Planes(): Plan[] {
+    return this.planes;
+  }
+
+  get Series(): Serie[] {
+    return this.series;
   }
 }
+
 
